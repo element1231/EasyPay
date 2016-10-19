@@ -98,7 +98,7 @@ public class ScanPayServiceTest {
 		String device_info = "test device";
 		String body = "test";
 		String attach = "test attach";
-		String out_trade_no = "4000000001";
+		String out_trade_no = "6000000001";
 		int total_fee = 1;
 		String spbill_create_ip = "8.8.8.8";
 		String time_start = simpleDateFormat.format(new Date());
@@ -107,7 +107,8 @@ public class ScanPayServiceTest {
 		c.add(Calendar.DAY_OF_MONTH, 10);
 		String time_expire = simpleDateFormat.format(c.getTime());
 		String goods_tag = "test goods";
-		String auth_code = "130417124162712511";
+		String auth_code = "130516824599278888";
+		String fee_type = "USD";
 		// String sub_mch_id = "11611403";
 //		  try {
 //			if (doOneReverse(out_trade_no)) {
@@ -121,7 +122,7 @@ public class ScanPayServiceTest {
 //		  System.exit(0);
 //		  
 		ScanPayReqData payData = new ScanPayReqData(auth_code, body, attach, out_trade_no, total_fee, device_info,
-				spbill_create_ip, time_start, time_expire, goods_tag);
+				spbill_create_ip, time_start, time_expire, goods_tag,fee_type);
 		
 		 String outTradeNo = payData.getOut_trade_no();
 		
