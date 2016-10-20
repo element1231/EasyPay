@@ -10,6 +10,6 @@
 	<classpathentry kind="lib" path="/Users/keli/Downloads/slf4j-simple-1.6.1.jar"/>
 	<classpathentry kind="lib" path="/Users/keli/Documents/libs/xmlpull-1.1.3.1.jar"/>
 	<classpathentry kind="lib" path="/Users/keli/Documents/libs/xpp3_min-1.1.4c.jar"/>
-	<classpathentry kind="lib" path="/Users/keli/Documents/libs/test_wx_sdk.jar"/>
+	<classpathentry kind="lib" path="/Users/keli/Documents/workspace/WxPayTest/lib/test_wx_sdk.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

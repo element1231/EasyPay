@@ -10,6 +10,7 @@ import java.util.Date;
 import com.tencent.WXPay;
 import com.tencent.common.HttpsRequest;
 import com.tencent.protocol.pay_protocol.ScanPayReqData;
+import com.tencent.protocol.refund_protocol.RefundReqData;
 
 public class TestClient {
 	public void test(){
@@ -37,12 +38,35 @@ public class TestClient {
 		String goods_tag = "test goods";
 		String auth_code = "130516824599278888";
 		String fee_type = "USD";
-		ScanPayReqData scanPayReqData = new ScanPayReqData(auth_code, body, attach, out_trade_no, total_fee, device_info,
-				spbill_create_ip, time_start, time_expire, goods_tag,fee_type);
-		DefaultScanPayBusinessResultListener resultListener = new DefaultScanPayBusinessResultListener();
 		
-		try {
-			wx.doScanPayBusiness(scanPayReqData, resultListener);
+		
+//		ScanPayReqData scanPayReqData = new ScanPayReqData(auth_code, body, attach, out_trade_no, total_fee, device_info,
+//				spbill_create_ip, time_start, time_expire, goods_tag,fee_type);
+//		
+//		
+//		DefaultScanPayBusinessResultListener resultListener = new DefaultScanPayBusinessResultListener();
+//		
+//		    
+//		try {
+//			wx.doScanPayBusiness(scanPayReqData, resultListener);
+//		} catch (Exception e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+		
+		 String transaction_id = "4005052001201610187014882445";
+	     String out_refund_no = "0001";
+	     int refund_fee = 1;
+	     String refund_fee_type = "USD";
+	     String op_user_id = "1900012291";
+	     
+	     RefundReqData refundReqData = new RefundReqData(transaction_id,out_trade_no,device_info,out_refund_no,total_fee,refund_fee,
+	    		 op_user_id,refund_fee_type);
+	     
+	     DefaultRefundBusinessResultListener refundListener = new DefaultRefundBusinessResultListener();
+	
+	     try {
+			wx.doRefundBusiness(refundReqData, refundListener);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -58,7 +82,7 @@ public class TestClient {
         //--------------------------------------------------------------------
 
         //1）测试被扫支付API
-        ScanPayServiceTest.test();	
+//        ScanPayServiceTest.test();	
         }
 	public static void main(String[] args){
 		TestClient tc = new TestClient();
